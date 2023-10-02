@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xe dap</title>
+    <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/xedap.css">
+</head>
+<body>
+    <video autoplay muted plays-inline loop>
+        <source src="./css/img/156837 (Original).mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <a href="#" class="logo"><img src="/css/img/loho.jpg"> NDC</a>
+            </nav>
+            <div class="nav-right">
+                <button class="btn white-btn" id="loginbtn" onclick="login()">Đăng Nhập</button>
+                <button class="btn" id="registerbtn" onclick="register()">Đăng Kí</button>
+            </div>
+        </header>
+        <div class="form">
+            <div class="login">
+            <div class="left" id="login">
+                <form>
+                    <div class="top">
+                        <p>Bạn chưa có tài khoản đăng nhập? <a href="#" onclick="register()">Đăng Kí</a></p>
+                        <h2>Đăng Nhập</h2>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="text" placeholder="Tên tài khoản hoặc email" required>
+                        <span> <i class="fa-solid fa-user"></i></span>
+                    </div>
+                    <div class="input">
+                        <input type="password" name="password" id="password" placeholder="Mật Khẩu" required>
+                        <span><i class="fa-solid fa-eye" id="bg" onclick="showHint()" aria-hidden="true"  ></i></span>
+                    </div>
+                    <div class="forget">
+                        <label><input type="checkbox">Nhớ lại</label>
+                        <a href="#"> Quên mật khẩu</a>
+                    </div>
+                    <div class="button">
+                        <button>Tiếp Tục</button>
+                    </div>
+                    <div class="or">
+                        <p>or</p>
+                        <div class="with">
+                             <i class="fa-brands fa-facebook fb"></i>
+                             <i class="fa-brands fa-twitter tw"></i> 
+                             <i class="fa-brands fa-github gh"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="right" id="register">
+                <form>
+                    <div class="top">
+                        <p>Bạn đã có có tài khoản đăng nhập? <a href="#" onclick="login()">Đăng Nhập</a></p>
+                        <h2>Đăng Kí</h2>
+                    </div>
+                    <div class="two-input">
+                        <div class="input">
+                         <input type="text" placeholder="First name">
+                         <span> <i class="fa-solid fa-user"></i></span>
+                        </div>
+                        <div class="input">
+                         <input type="text" placeholder="Last name">
+                         <span> <i class="fa-solid fa-user"></i></span>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <input type="email" placeholder="Email">
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                    </div>
+                    <div class="input">
+                        <input type="password" name="password" id="password" placeholder="Mật Khẩu" required>
+                        <span><i class="fa-solid fa-eye" id="bg" onclick="showHint()" aria-hidden="true"  ></i></span>
+                    </div>
+                    <div class="forget">
+                        <label><input type="checkbox"> Nhớ Lại</label>
+                        <a href="#">Terms & conditions</a>
+                    </div>
+                    <div class="button">
+                        <button>Đăng kí</button>
+                    </div> 
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var a = document.getElementById('loginbtn');
+        var b = document.getElementById('registerbtn');
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        function login()
+        {
+            x.style.left = '1px';
+            y.style.right = '-390px';
+            a.className += ' white-btn';   
+            b.className = 'btn';
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+        function register()
+        {
+            x.style.left = '-390px';
+            y.style.right = '1px';
+            a.className = 'btn';   
+            b.className += ' white-btn';
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+    </script>
+    <script>
+        var st = false;
+        function showHint(){
+            if(st){
+                document.getElementById("password").setAttribute('type','password');
+                document.getElementById("bg").style.color = 'black';
+                st = false;
+            }
+            else{
+                document.getElementById("password").setAttribute('type','text');
+                document.getElementById("bg").style.color = 'white';
+                st = true;
+            }
+        }
+    </script>
+</body>
+</html>
